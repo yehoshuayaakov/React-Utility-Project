@@ -1,0 +1,14 @@
+.card {
+        cursor: pointer;
+        max-width: 20rem;
+        width: 80%;
+        max-height: 20rem;
+        margin: 2rem auto;
+        animation: form-appear 1s ease-out forwards;    
+}
+.message {
+    color: darkgray;
+    padding: 50px;
+    font-weight: bold;
+    font-size: 17px;
+}

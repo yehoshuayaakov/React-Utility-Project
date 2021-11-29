@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
 
+import  UtilityProvider  from './store/UtilityProvider'
+import './App.css';
+import HomePage from './components/HomePage';
+import Header from './components/Layout/Header';
+import { useState } from 'react'
+import RegAndLogInForm from './components/RegisterAndLogIn/RegAndLogInForm';
+import Footer from './components/UI/Footer';
 function App() {
+ const [loggedIn, setLoggedIn]  = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UtilityProvider >
+      <div className="App">
+        <Header/>
+        {!loggedIn &&<RegAndLogInForm setLoggedIn = {setLoggedIn}/>}
+        {loggedIn &&<HomePage/>}
+        <Footer/>
+      </div>
+    </UtilityProvider>
   );
 }
 

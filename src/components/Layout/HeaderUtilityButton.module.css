@@ -1,0 +1,35 @@
+.button {
+    cursor: pointer;
+    font: inherit;
+    border: none;
+    background-color: #4d1601;
+    margin-left: 10px;
+    color: white;
+    padding: 0.75rem 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 25px;
+    font-weight: bold;
+  }
+  .button:hover {
+    box-shadow: 5px 10px 18px #e7e6e6; 
+    z-index: 20;
+    background-color: #943814;
+  }
+  .activeButton {
+    cursor: pointer;
+    font: inherit;
+    border: none;
+    margin-left: 10px;
+    color: white;
+    padding: 0.75rem 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 5px 10px 18px #e7e6e6; 
+    z-index: 20;
+    background-color: #943814;
+  }

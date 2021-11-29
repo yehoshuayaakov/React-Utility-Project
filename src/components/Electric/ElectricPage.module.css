@@ -1,0 +1,49 @@
+.form {
+    max-width: 20rem;
+    width: 90%;
+    height:  500px;
+    margin: 2rem auto;
+    animation: form-appear 1s ease-out forwards;
+    
+  }
+  .formControl{
+      margin-top: 89px;
+  }
+  .meals ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  @keyframes form-appear {
+    from {
+      opacity: 0;
+      transform: translateY(3rem);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .cards {
+    display: flex;
+    margin-top: 90px;
+    margin-left: 30rem;
+    animation: form-appear 1s ease-out forwards;
+  }
+  @keyframes form-appear {
+    from {
+      opacity: 0;
+      transform: translateY(3rem);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .topContent{
+    height: 10rem;
+}
+  
