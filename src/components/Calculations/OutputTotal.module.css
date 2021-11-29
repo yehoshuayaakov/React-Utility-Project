@@ -1,0 +1,54 @@
+.topMargin {
+    height: 13rem;
+}
+.output{
+    color: darkgrey;
+}
+.reading{
+    color: black;
+    font-size: 1.7rem;
+
+}
+.outputCard{
+    
+        max-width: 40rem;
+        width: 90%;
+        margin: 2rem auto;
+        animation: form-appear 1s ease-out forwards;
+        
+      
+}
+.button {
+    cursor: pointer;
+    border: none;
+    background-color: #4d1601;
+    /* margin-left: 30.5rem; */
+    color: white;
+    padding: 15px;
+    /* display: flex; */
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 25px;
+    font-weight: bold;
+    text-align: right;
+    font-size: 15px;
+  }
+  .buttonPosition{
+    text-align: center;
+  }
+  .button:hover {
+    box-shadow: 5px 10px 18px #e7e6e6; 
+    z-index: 20;
+    background-color: #943814;
+  }
+@keyframes form-appear {
+    from {
+      opacity: 0;
+      transform: translateY(3rem);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

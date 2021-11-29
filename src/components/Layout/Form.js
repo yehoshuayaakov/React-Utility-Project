@@ -8,13 +8,13 @@ const Form = (props) => {
     const readingRef = useRef(0);
 const submitHandler = (event) => {
 event.preventDefault();
- 
+props.setShowTotal(true);
 const formInfo = {
     date: dateOfReadingRef.current.value,
     reading: readingRef.current.value
 };
-
-props.addReading(formInfo);
+props.setCurrentReading(formInfo.reading)
+props.addReading({...formInfo, utility : props.activeUtility});
 formRef.current.reset();
 
 }
