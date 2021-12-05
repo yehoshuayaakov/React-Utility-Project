@@ -6,16 +6,23 @@ const Form = (props) => {
     const formRef = useRef('');
     const dateOfReadingRef = useRef('');
     const readingRef = useRef(0);
+
 const submitHandler = (event) => {
-event.preventDefault();
-props.setShowTotal(true);
-const formInfo = {
+    event.preventDefault();
+    if (props.readings.length > 0){  
+    props.setShowTotal(true);
+}
+else {
+    formRef.current.reset();
+    // props.setGoToCalulate(false);
+}
+    const formInfo = {
     date: dateOfReadingRef.current.value,
     reading: readingRef.current.value
 };
 props.setCurrentReading(formInfo.reading)
 props.addReading({...formInfo, utility : props.activeUtility});
-formRef.current.reset();
+// formRef.current.reset();
 
 }
 
@@ -41,9 +48,13 @@ formRef.current.reset();
 
                             
                         </div>
-                            <div className={classes.buttonPostion}>
+                            {props.readings.length>0 && <div className={classes.buttonPostion}>
                                 <button className={classes.button} type='submit'>Calculate</button>
-                            </div>
+                            </div>}
+                            {!props.readings.length && <div className={classes.buttonPostion}>
+                                <p>There are no readings yet for this utility</p>
+                                <button className={classes.button} type = 'submit' >Enter First Reading</button>
+                            </div>}
                     </form>
                 </CardStyle></div>
         </Fragment>)

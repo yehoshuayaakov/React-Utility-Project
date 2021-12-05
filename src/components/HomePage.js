@@ -12,7 +12,9 @@ import NavigationPage from './NavigationPage';
 import RegAndLogInForm from './RegisterAndLogIn/RegAndLogInForm';
 const HomePage = props => {
     const utilityContext = useContext(UtilityContext);
+    console.log(utilityContext.activeUser)
     useEffect(async () => {
+try {
         const response = await fetch(`https://utilities-react-app-default-rtdb.firebaseio.com/${utilityContext.activeUser}.json`);
         const data = await response.json();
         // console.log(data.Electricity);
@@ -39,6 +41,10 @@ const HomePage = props => {
             utilityContext.setUtilitiesReadings(utilitiesReadings);
         }
             console.log(utilitiesReadings)
+    }
+    catch (error){
+        console.log(error.message)
+    }
     }, [])
     const renderForm = () => {
         switch (utilityContext.activeUtility) {
@@ -64,11 +70,11 @@ const HomePage = props => {
                 {/* <Form activeUtility = {utilityContext.activeUtility}/> */}
                 <NavigationPage activeUtility={utilityContext.activeUtility} /></div>}
             {/* {utilityContext.activeUtility === 'Water' && <Form activeUtility = {utilityContext.activeUtility}/>} */}
-            <footer className={classes.footer}>
+            {/* <footer className={classes.footer}>
                 <div >
 
                 </div>
-            </footer>
+            </footer> */}
         </Fragment>
     )
 }

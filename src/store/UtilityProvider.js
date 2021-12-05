@@ -12,7 +12,7 @@ const UtilityContext = React.createContext( {
 
 
 const UtilityProvider = (props) => {
-    const [utilitiesReadings, setUtilitiesReadings] = useState([]);
+    const [utilitiesReadings, setUtilitiesReadings] = useState([{date: new Date(), reading : 235, utility: "Water", amount: 145}]);
     const [activeUser, setActiveUser] = useState('');
     const [activeUtility, setActiveUtility] = useState('');
     const utilityContext = {

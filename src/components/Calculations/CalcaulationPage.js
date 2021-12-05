@@ -6,6 +6,7 @@ const CalculationPage = (props) => {
     const [showTotal, setShowTotal] = useState(false);
 return <>
 {!showTotal && <Form 
+    readings = {props.readings}
     setGoToCalculation={props.setGoToCalculation}
     activeUtility={props.activeUtility}
     addReading = {props.addReading}

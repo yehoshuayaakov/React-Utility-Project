@@ -42,7 +42,7 @@
     align-items: center;
     border-radius: 25px;
     font-weight: bold;
-    text-align: right;
+    text-align: center;
     font-size: 15px;
   }
   .buttonPosition{
@@ -57,11 +57,12 @@
     max-width: 40rem;
     width: 90%;
     margin: 2rem auto;
+    color: darkgray;
     animation: form-appear 1s ease-out forwards;
     
   }
   .formControl{
-      margin-top: 89px;
+      margin-top: 50px;
   }
   .meals ul {
     list-style: none;
@@ -81,7 +82,7 @@
     }
   }
   .content{
-      margin-bottom: 70px;
+      margin-bottom: 40px;
   }
   .dateInput {
     margin-left: 103px;

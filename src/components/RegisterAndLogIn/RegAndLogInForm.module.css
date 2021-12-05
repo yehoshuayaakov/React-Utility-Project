@@ -22,7 +22,22 @@
     max-width: 100%;
     margin: 15px;
   }
-  
+  .disabledButton {
+    cursor: not-allowed;
+    opacity: .4;
+    border: none;
+    background-color: #4d1601;
+    margin-left: 31rem;
+    color: white;
+    padding: 17px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 25px;
+    font-weight: bold;
+    text-align: right;
+    font-size: 15px;
+  }
   .button {
     cursor: pointer;
     border: none;
@@ -80,9 +95,14 @@
   .content{
       margin-bottom: 70px;
   }
-  .emailInput {
-    margin-left: 30px;
+  .passwordInput {
+    margin-left: 12px;
   }
   .topContent{
     height: 10rem;
+}
+.userNameWarning{
+  color: red;
+  font-size: small;
+  margin-top: 10px;
 }

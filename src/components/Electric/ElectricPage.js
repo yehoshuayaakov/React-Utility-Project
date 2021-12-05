@@ -16,7 +16,7 @@ const ElectricPage = (props) => {
             { <div >
                 <div className={classes.topContent}></div>
                 <div className = {classes.cards}>
-                    <div onClick = {()=>props.setShowCharts(true)}> 
+                    <div onClick = {()=>props.setGoToChartsAndHistory(true)}> 
                         <UtilityPageCard message={Messages.seeCharts.defaultMessage} />
                     </div>
                  <div onClick = {()=>props.setGoToCalculation(true)}>

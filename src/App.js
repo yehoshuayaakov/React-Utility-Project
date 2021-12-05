@@ -14,8 +14,9 @@ function App() {
         <Header/>
         {!loggedIn &&<RegAndLogInForm setLoggedIn = {setLoggedIn}/>}
         {loggedIn &&<HomePage/>}
-        <Footer/>
+        
       </div>
+      <Footer/>
     </UtilityProvider>
   );
 }
