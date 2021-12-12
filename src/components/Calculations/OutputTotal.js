@@ -28,6 +28,7 @@ return <>
     <CardStyle>
     
         <div className={classes.output}>
+            <h1>{props.activeUtility} Bill</h1>
             <h3>Previous Reading on {filteredReadings[filteredReadings.length-1].date}: <br/> 
             <div className={classes.reading}>{filteredReadings[filteredReadings.length-1].reading} </div></h3>
             <h3>Current Reading : 
