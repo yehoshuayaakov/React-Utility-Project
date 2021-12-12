@@ -4,6 +4,7 @@ import CardStyle from '../UI/CardStyle'
 import classes from './OutputTotal.module.css';
 const OutputTotal = (props) => {
     const utilityContext = useContext(UtilityContext);
+    console.log(utilityContext.utilitiesReadings)
     const filteredReadings = utilityContext.utilitiesReadings.filter(reading => reading.utility === props.activeUtility)
     const getTotal = () => {
         switch (props.activeUtility){

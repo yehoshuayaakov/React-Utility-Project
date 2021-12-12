@@ -1,12 +1,12 @@
-import React, { Fragment, useRef } from 'react'
+import React, { Fragment, useRef, useContext } from 'react'
 import classes from './Form.module.css'
 import CardStyle from '../UI/CardStyle'
-
+import { UtilityContext  } from '../../store/UtilityProvider'
 const Form = (props) => {
     const formRef = useRef('');
     const dateOfReadingRef = useRef('');
     const readingRef = useRef(0);
-
+    const utilityContext = useContext(UtilityContext);
 const submitHandler = (event) => {
     event.preventDefault();
     if (props.readings.length > 0){  
@@ -18,14 +18,16 @@ else {
 }
     const formInfo = {
     date: dateOfReadingRef.current.value,
-    reading: readingRef.current.value
+    reading: readingRef.current.value,
+    paid: false
 };
 props.setCurrentReading(formInfo.reading)
 props.addReading({...formInfo, utility : props.activeUtility});
 // formRef.current.reset();
-
+// utilityContext.setUtilitiesReadings(...utilityContext.utilitiesReadings, {...formInfo, utility: props.activeUtility });
+// console.log(utilityContext(utilitiesReadings));
+// }
 }
-
     return (
         <Fragment>
             <div className={classes.topContent}></div>

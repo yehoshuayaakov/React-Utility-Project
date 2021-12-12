@@ -49,7 +49,9 @@ const NavigationPage = props => {
                 />}
             {goToChartsAndHistory && 
             <History
-            readings = {utilityContext.utilitiesReadings}/>
+            readings = {utilityContext.utilitiesReadings}
+            setGoToChartsAndHistory = {setGoToChartsAndHistory}
+            />
             }
         </>
     )

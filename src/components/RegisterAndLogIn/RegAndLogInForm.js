@@ -38,7 +38,7 @@ const RegAndLogInForm = (props) => {
     useEffect(()=> {
         setTimeout(()=>{
             setFormIsValid(userNameState.isValid && userPasswordState.isValid)
-        },500)
+        },300)
     },[userNameState, userPasswordState])
     const submitHandler = (event) => {
         event.preventDefault();
