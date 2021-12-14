@@ -19,7 +19,7 @@ const History = (props) => {
     useEffect(()=>{
         const list = utilityContext.utilitiesReadings.filter(reading => reading.utility === utilityContext.activeUtility)
         setHistoryList(list);
-        const total = list.reduce((sum, {amount})=>  sum + amount, 0);
+        const total = list.reduce((sum, {amount})=>  sum + +amount, 0).toFixed(2);
         setTotalDue(total);
         console.log(total);
     },[utilityContext.activeUtility]);
@@ -65,7 +65,7 @@ const History = (props) => {
                 </tbody>
             </table>
             <div>
-            <h2 className={classes.header}>Total Due : {totalDue}</h2>
+            <h2 className={classes.header}>Total Due : ${totalDue}</h2>
             <button onClick={()=>props.setGoToChartsAndHistory(false)}>Go back</button>
             </div>
         </CardStyle>

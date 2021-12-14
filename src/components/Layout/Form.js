@@ -1,4 +1,4 @@
-import React, { Fragment, useRef, useContext } from 'react'
+import React, { Fragment, useRef, useContext, useState, useEffect } from 'react'
 import classes from './Form.module.css'
 import CardStyle from '../UI/CardStyle'
 import { UtilityContext  } from '../../store/UtilityProvider'
@@ -7,23 +7,58 @@ const Form = (props) => {
     const dateOfReadingRef = useRef('');
     const readingRef = useRef(0);
     const utilityContext = useContext(UtilityContext);
+    const [readings, setReadings] = useState([]);
+    const filteredReadings = utilityContext.utilitiesReadings.filter(reading => reading.utility === props.activeUtility)
+    const [firstReadingEntered, setFirstReadingEntered] = useState(false)
+    useEffect (()=> {
+        setReadings(filteredReadings)
+    },[]);
+
+    const getTotal = () => {
+        switch (props.activeUtility){
+            case 'Electricity' : {
+                if (filteredReadings.length > 0){
+                const total = (readingRef.current.value - filteredReadings[filteredReadings.length-1].reading) * .443
+                return total.toFixed(2);}
+                else return 0;
+            }
+            case 'Water' : {
+                if (filteredReadings.length > 0){
+                const total = (readingRef.current.value - filteredReadings[filteredReadings.length-1].reading) * 6.9
+                console.log(filteredReadings[filteredReadings.length-1].reading)
+                return total.toFixed(2);}
+                else{
+                    return 0;
+                }
+            }
+            case 'Gas' : {
+                if (filteredReadings.length > 0){
+                const total = (readingRef.current.value - filteredReadings[filteredReadings.length-1].reading) * 2.9
+                return total.toFixed(2);}
+                else return 0;
+            }
+        }
+    }
 const submitHandler = (event) => {
     event.preventDefault();
-    if (props.readings.length > 0){  
+    if (filteredReadings.length > 0){  
     props.setShowTotal(true);
+    setFirstReadingEntered(false)
 }
-else {
-    formRef.current.reset();
-    // props.setGoToCalulate(false);
+else{
+    setFirstReadingEntered(true);
 }
+
     const formInfo = {
     date: dateOfReadingRef.current.value,
     reading: readingRef.current.value,
-    paid: false
+    paid: false,
+    amount: getTotal()
 };
 props.setCurrentReading(formInfo.reading)
 props.addReading({...formInfo, utility : props.activeUtility});
-// formRef.current.reset();
+ formRef.current.reset();
+ setReadings([...readings, {...formInfo, utility : props.activeUtility}])
 // utilityContext.setUtilitiesReadings(...utilityContext.utilitiesReadings, {...formInfo, utility: props.activeUtility });
 // console.log(utilityContext(utilitiesReadings));
 // }
@@ -50,10 +85,10 @@ props.addReading({...formInfo, utility : props.activeUtility});
 
                             
                         </div>
-                            {props.readings.length>0 && <div className={classes.buttonPostion}>
+                            {readings.length>0  && <div className={classes.buttonPostion}>
                                 <button className={classes.button} type='submit'>Calculate</button>
                             </div>}
-                            {!props.readings.length && <div className={classes.buttonPostion}>
+                            {!readings.length && <div className={classes.buttonPostion}>
                                 <p>There are no readings yet for this utility</p>
                                 <button className={classes.button} type = 'submit' >Enter First Reading</button>
                             </div>}

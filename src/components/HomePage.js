@@ -51,7 +51,7 @@ try {
             case "Gas":
                 return <Form activeUtility={utilityContext.activeUtility} />
                 break;
-            case "Water":
+      case "Water":
                 return <Form activeUtility={utilityContext.activeUtility} />
                 break;
             case "Electricity":
