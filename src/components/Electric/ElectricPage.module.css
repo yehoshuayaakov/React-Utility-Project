@@ -29,7 +29,7 @@
   .cards {
     display: flex;
     margin-top: 90px;
-    margin-left: 25rem;
+    margin-left: 38rem;
     animation: form-appear 1s ease-out forwards;
   }
   @keyframes form-appear {

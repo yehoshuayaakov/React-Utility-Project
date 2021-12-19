@@ -34,7 +34,7 @@
     cursor: pointer;
     border: none;
     background-color: #4d1601;
-    margin-left: 30.5rem;
+    /* margin-left: 30.5rem; */
     color: white;
     padding: 15px;
     display: flex;
@@ -44,14 +44,39 @@
     font-weight: bold;
     text-align: center;
     font-size: 15px;
+    margin: 10px
+  }
+  .button2{
+    cursor: pointer;
+    border: solid 2px #4d1601;
+    background-color: white;
+    /* margin-left: 30.5rem; */
+    color: #4d1601;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 25px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+    margin: 10px
   }
   .buttonPosition{
     text-align: right;
+    display: flex;
+    flex-direction: row;
+    margin-left: 22rem;
   }
-  .button:hover {
+  .button:hover{
     box-shadow: 5px 10px 18px #e7e6e6; 
     z-index: 20;
     background-color: #943814;
+  }
+  .button2:hover{
+    box-shadow: 5px 10px 18px #e7e6e6; 
+    z-index: 20;
+    background-color: #f3bfab;
   }
   .form {
     max-width: 40rem;

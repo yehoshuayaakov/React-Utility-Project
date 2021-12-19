@@ -85,8 +85,9 @@ props.addReading({...formInfo, utility : props.activeUtility});
 
                             
                         </div>
-                            {readings.length>0  && <div className={classes.buttonPostion}>
+                            {readings.length>0  && <div className={classes.buttonPosition}>
                                 <button className={classes.button} type='submit'>Calculate</button>
+                                <button className={classes.button2} onClick={()=>props.setGoToCalculation(false)}>Go Back</button>
                             </div>}
                             {!readings.length && <div className={classes.buttonPostion}>
                                 <p>There are no readings yet for this utility</p>
