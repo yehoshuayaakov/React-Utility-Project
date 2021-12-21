@@ -11,6 +11,7 @@
   margin-right: 10%;
    border-radius: 15px; 
   color: black;
+ 
    /* background-color:white; */
 }
 .table tr {
@@ -57,11 +58,16 @@
   max-width: 40rem;
   width: 90%;
   margin: 2rem auto;
+ 
   animation: form-appear 1s ease-out forwards;
 }
 .header{
   color: hsl(17, 97%, 15%);
   text-decoration: underline;
+}
+.maxHeight {
+   height: 30rem;
+  overflow: auto;
 }
 @keyframes form-appear {
   from {

@@ -59,7 +59,8 @@ props.setCurrentReading(formInfo.reading)
 props.addReading({...formInfo, utility : props.activeUtility});
  formRef.current.reset();
  setReadings([...readings, {...formInfo, utility : props.activeUtility}])
-// utilityContext.setUtilitiesReadings(...utilityContext.utilitiesReadings, {...formInfo, utility: props.activeUtility });
+ const updatedUtilitiesReadings = [...utilityContext.utilitiesReadings, {...formInfo, utility: props.activeUtility}]
+ utilityContext.setUtilitiesReadings(updatedUtilitiesReadings);
 // console.log(utilityContext(utilitiesReadings));
 // }
 }

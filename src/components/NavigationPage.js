@@ -20,12 +20,17 @@ const NavigationPage = props => {
             }
         })
         const data = await response.json();
+        for (let info in data){
+            console.log(data[info]);
+            utilityContext.setId(data[info])
+        }
         console.log(data);}
         catch(error){
             console.log(error)
         }
     }
     useEffect(()=>{
+        
     //  setGoToCalculation(false);
     //     setShowCharts(false);
         

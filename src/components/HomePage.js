@@ -25,11 +25,15 @@ try {
                 case "Electricity": {
                     for (let info in data.Electricity)
                         utilitiesReadings.push({ ...data.Electricity[info], utility: 'Electricity' })
+                        
                     break;
                 }
                 case "Water": {
-                    for (let info in data.Water)
-                        utilitiesReadings.push({ ...data.Water[info], utility: 'Water' })
+                    for (let info in data.Water){
+                        utilitiesReadings.push({ ...data.Water[info], utility: 'Water', id: info })
+                        console.log(data.Water[info])
+                        console.log(Object.keys(data.Water)[0])
+                    }
                     break;
                 }
                 case "Gas": {

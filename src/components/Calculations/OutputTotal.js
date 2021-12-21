@@ -9,16 +9,16 @@ const OutputTotal = (props) => {
     const getTotal = () => {
         switch (props.activeUtility){
             case 'Electricity' : {
-                const total = (props.currentReading - filteredReadings[filteredReadings.length-1].reading) * .443
+                const total = (props.currentReading - filteredReadings[filteredReadings.length-2].reading) * .443
                 return total.toFixed(2);
             }
             case 'Water' : {
-                const total = (props.currentReading - filteredReadings[filteredReadings.length-1].reading) * 6.9
+                const total = (props.currentReading - filteredReadings[filteredReadings.length-2].reading) * 6.9
                 console.log(filteredReadings[filteredReadings.length-1].reading)
                 return total.toFixed(2);
             }
             case 'Gas' : {
-                const total = (props.currentReading - filteredReadings[filteredReadings.length-1].reading) * 2.9
+                const total = (props.currentReading - filteredReadings[filteredReadings.length-2].reading) * 2.9
                 return total.toFixed(2);
             }
         }
@@ -29,8 +29,8 @@ return <>
     <CardStyle>
     
         <div className={classes.output}>
-            <h3>Previous Reading on {filteredReadings[filteredReadings.length-1].date.toLocaleString()}: <br/> 
-            <div className={classes.reading}>{filteredReadings[filteredReadings.length-1].reading} </div></h3>
+            <h3>Previous Reading on {filteredReadings[filteredReadings.length-2].date.toLocaleString()}: <br/> 
+            <div className={classes.reading}>{filteredReadings[filteredReadings.length-2].reading} </div></h3>
             <h3>Current Reading : 
             <div className={classes.reading}>{props.currentReading}</div></h3>
             <h1>Total Due: {getTotal()}</h1>
